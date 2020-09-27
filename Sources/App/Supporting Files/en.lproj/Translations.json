@@ -1,0 +1,10 @@
+{
+    "generic": {
+        "hello": "Hello!"
+    },
+    
+    "welcome": {
+        "title": "Welcome!",
+        "description": "How are you?"
+    }
+}

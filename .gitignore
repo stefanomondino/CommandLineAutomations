@@ -1,0 +1,9 @@
+vendor
+Pods
+Carthage
+
+*.xcodeproj
+*.xcworkspace
+default.profraw
+
+Sources/App/Supporting Files/Generated

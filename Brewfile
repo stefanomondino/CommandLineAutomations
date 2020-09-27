@@ -1,0 +1,5 @@
+brew 'swiftgen'
+brew 'swiftlint'
+brew 'swiftformat'
+brew 'xcodegen'
+brew 'ImageMagick'
