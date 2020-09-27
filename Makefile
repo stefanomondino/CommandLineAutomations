@@ -5,9 +5,9 @@ export APP_NAME = TheApp
 export BUNDLE_IDENTIFIER = com.new.appIdentifier
 # Prepare Application workspace
 project:
-	#Using a tmp project.yml to avoid messing up with relative paths
 	xcodegen generate 
 	bundle exec pod install
+	make resources
 
 resources:
 	swiftgen config run --config swiftgen.yml
@@ -38,7 +38,7 @@ setup:
 	brew bundle
 	make git_setup
 	make resources
-	bundle exec pod repo update
+#	bundle exec pod repo update
 	make project
 
 git_setup:
