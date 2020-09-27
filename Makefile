@@ -33,6 +33,7 @@ format:
 
 setup:
 	make clean
+    	bundle config set path 'vendor/bundle'
 	bundle update
 #	brew update && brew bundle
 	brew bundle
