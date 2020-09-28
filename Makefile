@@ -5,14 +5,14 @@ export APP_NAME = TheApp
 export BUNDLE_IDENTIFIER = com.new.appIdentifier
 # Prepare Application workspace
 project:
-	xcodegen generate 
+	xcodegen generate
 	bundle exec pod install
 
 resources:
 	mkdir -p "Sources/App/SupportingFiles/Generated"
 	swiftgen config run --config swiftgen.yml
 
-dependencies: 
+dependencies:
 	bundle exec pod install --repo-update
 
 update_dependencies:
@@ -47,16 +47,19 @@ git_setup:
 
 # Define pre commit script to auto lint and format the code
 define _add_pre_commit
+SWIFTLINT_PATH=`which swiftlint`
+SWIFTFORMAT_PATH=`which swiftformat`
 if [ -d ".git" ]; then
 cat > .git/hooks/pre-commit << ENDOFFILE
 #!/bin/sh
 FILES=\$(git diff --cached --name-only --diff-filter=ACMR "*.swift" | sed 's| |\\ |g')
 [ -z "\$FILES" ] && exit 0
 # Format
-swiftformat \$FILES
+${SWIFTFORMAT_PATH} \$FILES
+
 # Lint
-swiftlint autocorrect \$FILES
-swiftlint lint \$FILES
+${SWIFTLINT_PATH} autocorrect \$FILES
+${SWIFTLINT_PATH} lint \$FILES
 # Add back the formatted/linted files to staging
 echo "\$FILES" | xargs git add
 
@@ -67,4 +70,3 @@ chmod +x .git/hooks/pre-commit
 fi
 endef
 export add_pre_commit_script = $(value _add_pre_commit)
-
