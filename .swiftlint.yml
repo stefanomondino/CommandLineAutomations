@@ -1,24 +1,12 @@
 disabled_rules: # rule identifiers to exclude from running
 - trailing_whitespace
-# - colon
-# - comma
-#- control_statement
-#- identifier_name
-#- type_name
-#- empty_count
-#- function_body_length
-#- type_body_length
-# - shorthand_operator
-#- force_cast
-#- redundant_string_enum_value
-#- file_length
-#- function_parameter_count
 opt_in_rules:
 - empty_count
 included:
 - Sources
 excluded:
 - Carthage
+- Configuration
 - Pods
 - vendor
 
@@ -48,7 +36,6 @@ type_name:
   excluded:
     - iPhone
     - T
-    - API
 nesting:
   type_level: 3
 identifier_name:
@@ -57,5 +44,4 @@ identifier_name:
   excluded: # excluded via string array
     - id
     - URL
-    - GlobalAPIKey
 reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)

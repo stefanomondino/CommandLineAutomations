@@ -28,6 +28,10 @@ targets:
     type: application
     platform: iOS
     sources: "Sources/App"
+    scheme:
+      configVariants:
+        - Devel
+        - Prod
     preBuildScripts:
       - name: "SwiftLint"
         script: |
