@@ -50,7 +50,7 @@ define _add_pre_commit
 if [ -d ".git" ]; then
 cat > .git/hooks/pre-commit << ENDOFFILE
 #!/bin/sh
-FILES=\$(git diff --cached --name-only --diff-filter=ACMR "*.swift" | sed 's| |\\ |g'y)
+FILES=\$(git diff --cached --name-only --diff-filter=ACMR "*.swift" | sed 's| |\\ |g')
 [ -z "\$FILES" ] && exit 0
 # Format
 swiftformat \$FILES
