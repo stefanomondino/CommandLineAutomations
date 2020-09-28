@@ -1,2 +1,2 @@
 --exclude Pods
---exclude "Sources/App/Supporting Files/Generated"
+--exclude "Sources/App/SupportingFiles/Generated"
