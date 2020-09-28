@@ -7,9 +7,9 @@ export BUNDLE_IDENTIFIER = com.new.appIdentifier
 project:
 	xcodegen generate 
 	bundle exec pod install
-	make resources
 
 resources:
+	mkdir -p "Sources/App/Supporting Files/Generated"
 	swiftgen config run --config swiftgen.yml
 
 dependencies: 
