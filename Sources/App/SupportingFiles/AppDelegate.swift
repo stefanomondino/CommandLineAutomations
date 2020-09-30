@@ -1,17 +1,20 @@
 import Core
-import RxSwift
+
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    lazy var window: UIWindow? = {
+    var window: UIWindow?
+    func application(_: UIApplication,
+                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         Logger.log(Strings.Welcome.title.translation)
         logEnvironment()
         let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
         window.rootViewController = UINavigationController(rootViewController: ViewController())
         window.makeKeyAndVisible()
-        return window
-    }()
+        return true
+    }
 
     private func logEnvironment() {
         #if PROD
@@ -19,18 +22,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #elseif DEVEL
             Logger.log("Welcome to the DEVELOPMENT environment!")
         #endif
-    }
-}
-
-class ViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .background
-        navigationController?.navigationBar.prefersLargeTitles = true
-        title = Strings.Generic.hello.translation
-        let image = UIImageView(image: Asset.heart.image)
-        view.addSubview(image)
-        image.contentMode = .center
-        image.frame = view.bounds
     }
 }
