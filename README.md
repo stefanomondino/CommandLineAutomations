@@ -1,8 +1,10 @@
-# Command-line Automations
+# Command-line Automations - Unchain your Xcode projects!
 
 This repo is a working demo for my talk @SwiftHeroes2020
 
-## Scope of this repository
+Slides are available [here](./slides.pdf)
+
+## About this repo.
 
 This project can be a good starting point for any "fresh project" that is about to start.
 It's a good showcase of tools that improves code quality (SwiftFormat and SwiftLint), helps managing the "xcodeproj" merge conflict hell (XCodeGen) and creates static references to resources (with SwiftGen). 
@@ -17,7 +19,6 @@ The final goal is to have a project ready to be shared with other developers (wi
 - Working Ruby environment (system default or `rbenv`/`rvm`)
 - `bundler` installed (`gem install bundler`, with `sudo` if needed)
 - `homebrew` installed (`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`)
-
 
 ## Instructions
 
